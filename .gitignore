@@ -1,0 +1,13 @@
+# Gowin EDA
+/tmp
+/impl
+*.gprj.user
+
+# Gowiners
+.gowin
+
+# Verilator
+obj_dir
+
+# NeoVim
+.nvim

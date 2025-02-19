@@ -1,0 +1,31 @@
+name = "dvp2hdmi"
+version = 5
+
+[device]
+family = "GW5AST-138B"
+part = "GW5AST-LV138FPG676AC1/I0"
+
+[hdl]
+standard = "sysv2017"
+top = "top"
+
+[files]
+verilog = [
+  "src/**/*.sv",
+]
+cst = "phy.cst"
+sdc = "timings.sdc"
+
+[pnr]
+place_option = 3
+route_option = 1
+replicate = true
+
+[bitstream]
+compress = true
+
+[programmer]
+fs = "impl/pnr/project.fs"
+
+preset.sram = { op = "2" }
+preset.spi = { op = "53" }

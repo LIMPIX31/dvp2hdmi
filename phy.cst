@@ -1,0 +1,80 @@
+IO_PORT "ref_clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_LOC  "ref_clk" P16;
+
+IO_PORT "rst_n" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_LOC  "rst_n" K16;
+
+IO_PORT "twi_mux[0]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "twi_mux[0]" N19;
+
+IO_PORT "twi_mux[1]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "twi_mux[1]" P19;
+
+IO_PORT "twi_mux[2]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "twi_mux[2]" P26;
+
+IO_PORT "dvp_scl" BANK_VCCIO=3.3 PULL_MODE=UP;
+IO_LOC  "dvp_scl" K25;
+
+IO_PORT "dvp_sda" BANK_VCCIO=3.3 PULL_MODE=UP;
+IO_LOC  "dvp_sda" K26;
+
+IO_PORT "dvp_vsync" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_vsync" G17;
+
+IO_PORT "dvp_de" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_de" E16;
+
+IO_PORT "dvp_pixel_clk" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_pixel_clk" D20;
+
+IO_PORT "dvp_ref_clk" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_ref_clk" C17;
+
+IO_PORT "dvp_rst_n" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_rst_n" F17;
+
+IO_PORT "dvp_power_down" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_power_down" D16;
+
+IO_PORT "dvp_data[0]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_data[0]" D21;
+
+IO_PORT "dvp_data[1]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_data[1]" A22;
+
+IO_PORT "dvp_data[2]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_data[2]" B22;
+
+IO_PORT "dvp_data[3]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_data[3]" E21;
+
+IO_PORT "dvp_data[4]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_data[4]" E20;
+
+IO_PORT "dvp_data[5]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_data[5]" D18;
+
+IO_PORT "dvp_data[6]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_data[6]" C18;
+
+IO_PORT "dvp_data[7]" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "dvp_data[7]" B17;
+
+IO_PORT "tmds_clk_p" IO_TYPE=LVDS25 DRIVE=6;
+IO_LOC  "tmds_clk_p" Y22,Y23;
+
+IO_PORT "tmds_chan_p[0]" IO_TYPE=LVDS25 DRIVE=6;
+IO_LOC  "tmds_chan_p[0]" AB24,AC24;
+
+IO_PORT "tmds_chan_p[1]" IO_TYPE=LVDS25 DRIVE=6;
+IO_LOC  "tmds_chan_p[1]" V24,W24;
+
+IO_PORT "tmds_chan_p[2]" IO_TYPE=LVDS25 DRIVE=6;
+IO_LOC  "tmds_chan_p[2]" AA22,AA23;
+
+IO_PORT "led_dvp_ready" BANK_VCCIO=3.3 PULL_MODE=NONE;
+IO_LOC  "led_dvp_ready" N23;
+
+//IO_PORT "led_vsync" IO_TYPE=LVCMOS33;
+//IO_LOC  "led_vsync" N21;
