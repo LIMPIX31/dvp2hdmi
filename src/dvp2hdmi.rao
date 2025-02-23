@@ -2,9 +2,8 @@
 <GAO_CONFIG>
     <Version>3.0</Version>
     <Mode>Standard</Mode>
-    <AoCore index="0" sample_clock="ref_clk" trig_type="0" storage_depth="16384" window_num="1" capture_amount="16384" implementation="0" trigger_pos="0" module_name="top" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
+    <AoCore index="0" sample_clock="dvp_pixel_clk" trig_type="0" storage_depth="16384" window_num="1" capture_amount="16384" implementation="0" trigger_pos="0" module_name="top" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
         <SignalList>
-            <Signal capture_enable="true">dvp_pixel_clk</Signal>
             <Signal capture_enable="true">dvp_vsync</Signal>
             <Signal capture_enable="true">dvp_de</Signal>
             <Bus capture_enable="true" name="dvp_data[7:0]">
@@ -17,11 +16,12 @@
                 <Signal>dvp_data[1]</Signal>
                 <Signal>dvp_data[0]</Signal>
             </Bus>
+            <Signal capture_enable="true">dvp_pixel_clk</Signal>
         </SignalList>
         <Triggers>
             <Trigger index="0">
                 <SignalList>
-                    <Signal>dvp_pixel_clk</Signal>
+                    <Signal>dvp_de</Signal>
                 </SignalList>
             </Trigger>
             <Trigger index="1"/>

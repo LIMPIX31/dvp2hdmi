@@ -24,8 +24,8 @@ module dvp_init #(
 
     assign twi_quart = &twi_counter;
 
-    logic [23:0] rom[512]; 
-    logic [8:0] rom_addr;
+    logic [23:0] rom[1024]; 
+    logic [9:0] rom_addr;
     logic [23:0] rom_data;
 
     always_ff @(posedge clk) begin
@@ -33,16 +33,16 @@ module dvp_init #(
     end
 
     initial begin
-        $readmemh("dvp_rom.txt", rom);
+        $readmemh("progmem.txt", rom);
     end
 
-    logic [19:0] guard;
+    logic [20:0] guard;
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             guard <= 0;
         end else if (!(&guard)) begin
-            guard <= guard + 20'b1;
+            guard <= guard + 21'b1;
         end
     end
 
@@ -200,44 +200,44 @@ module dvp_init #(
                 108: {twi_sda, twi_scl, ack, state} <= {1'b1, 1'b1, sda, state + 8'b1};
                 // rom_data[7]
                 109: {twi_sda, twi_scl, state} <= {1'b1, 1'b0, state + 8'b1};
-                110: {twi_sda, twi_scl, state} <= {rom_data[15], 1'b0, state + 8'b1};
-                111: {twi_sda, twi_scl, state} <= {rom_data[15], 1'b1, state + 8'b1};
-                112: {twi_sda, twi_scl, state} <= {rom_data[15], 1'b1, state + 8'b1};
+                110: {twi_sda, twi_scl, state} <= {rom_data[7], 1'b0, state + 8'b1};
+                111: {twi_sda, twi_scl, state} <= {rom_data[7], 1'b1, state + 8'b1};
+                112: {twi_sda, twi_scl, state} <= {rom_data[7], 1'b1, state + 8'b1};
                 // rom_data[6]
-                113: {twi_sda, twi_scl, state} <= {rom_data[15], 1'b0, state + 8'b1};
-                114: {twi_sda, twi_scl, state} <= {rom_data[14], 1'b0, state + 8'b1};
-                115: {twi_sda, twi_scl, state} <= {rom_data[14], 1'b1, state + 8'b1};
-                116: {twi_sda, twi_scl, state} <= {rom_data[14], 1'b1, state + 8'b1};
+                113: {twi_sda, twi_scl, state} <= {rom_data[7], 1'b0, state + 8'b1};
+                114: {twi_sda, twi_scl, state} <= {rom_data[6], 1'b0, state + 8'b1};
+                115: {twi_sda, twi_scl, state} <= {rom_data[6], 1'b1, state + 8'b1};
+                116: {twi_sda, twi_scl, state} <= {rom_data[6], 1'b1, state + 8'b1};
                 // rom_data[5]
-                117: {twi_sda, twi_scl, state} <= {rom_data[14], 1'b0, state + 8'b1};
-                118: {twi_sda, twi_scl, state} <= {rom_data[13], 1'b0, state + 8'b1};
-                119: {twi_sda, twi_scl, state} <= {rom_data[13], 1'b1, state + 8'b1};
-                120: {twi_sda, twi_scl, state} <= {rom_data[13], 1'b1, state + 8'b1};
+                117: {twi_sda, twi_scl, state} <= {rom_data[6], 1'b0, state + 8'b1};
+                118: {twi_sda, twi_scl, state} <= {rom_data[5], 1'b0, state + 8'b1};
+                119: {twi_sda, twi_scl, state} <= {rom_data[5], 1'b1, state + 8'b1};
+                120: {twi_sda, twi_scl, state} <= {rom_data[5], 1'b1, state + 8'b1};
                 // rom_data[4]
-                121: {twi_sda, twi_scl, state} <= {rom_data[13], 1'b0, state + 8'b1};
-                122: {twi_sda, twi_scl, state} <= {rom_data[12], 1'b0, state + 8'b1};
-                123: {twi_sda, twi_scl, state} <= {rom_data[12], 1'b1, state + 8'b1};
-                124: {twi_sda, twi_scl, state} <= {rom_data[12], 1'b1, state + 8'b1};
+                121: {twi_sda, twi_scl, state} <= {rom_data[5], 1'b0, state + 8'b1};
+                122: {twi_sda, twi_scl, state} <= {rom_data[4], 1'b0, state + 8'b1};
+                123: {twi_sda, twi_scl, state} <= {rom_data[4], 1'b1, state + 8'b1};
+                124: {twi_sda, twi_scl, state} <= {rom_data[4], 1'b1, state + 8'b1};
                 // rom_data[3]
-                125: {twi_sda, twi_scl, state} <= {rom_data[12], 1'b0, state + 8'b1};
-                126: {twi_sda, twi_scl, state} <= {rom_data[11], 1'b0, state + 8'b1};
-                127: {twi_sda, twi_scl, state} <= {rom_data[11], 1'b1, state + 8'b1};
-                128: {twi_sda, twi_scl, state} <= {rom_data[11], 1'b1, state + 8'b1};
+                125: {twi_sda, twi_scl, state} <= {rom_data[4], 1'b0, state + 8'b1};
+                126: {twi_sda, twi_scl, state} <= {rom_data[3], 1'b0, state + 8'b1};
+                127: {twi_sda, twi_scl, state} <= {rom_data[3], 1'b1, state + 8'b1};
+                128: {twi_sda, twi_scl, state} <= {rom_data[3], 1'b1, state + 8'b1};
                 // rom_data[2]
-                129: {twi_sda, twi_scl, state} <= {rom_data[11], 1'b0, state + 8'b1};
-                130: {twi_sda, twi_scl, state} <= {rom_data[10], 1'b0, state + 8'b1};
-                131: {twi_sda, twi_scl, state} <= {rom_data[10], 1'b1, state + 8'b1};
-                132: {twi_sda, twi_scl, state} <= {rom_data[10], 1'b1, state + 8'b1};
+                129: {twi_sda, twi_scl, state} <= {rom_data[3], 1'b0, state + 8'b1};
+                130: {twi_sda, twi_scl, state} <= {rom_data[2], 1'b0, state + 8'b1};
+                131: {twi_sda, twi_scl, state} <= {rom_data[2], 1'b1, state + 8'b1};
+                132: {twi_sda, twi_scl, state} <= {rom_data[2], 1'b1, state + 8'b1};
                 // rom_data[1]
-                133: {twi_sda, twi_scl, state} <= {rom_data[10], 1'b0, state + 8'b1};
-                134: {twi_sda, twi_scl, state} <= {rom_data[9], 1'b0, state + 8'b1};
-                135: {twi_sda, twi_scl, state} <= {rom_data[9], 1'b1, state + 8'b1};
-                136: {twi_sda, twi_scl, state} <= {rom_data[9], 1'b1, state + 8'b1};
+                133: {twi_sda, twi_scl, state} <= {rom_data[2], 1'b0, state + 8'b1};
+                134: {twi_sda, twi_scl, state} <= {rom_data[1], 1'b0, state + 8'b1};
+                135: {twi_sda, twi_scl, state} <= {rom_data[1], 1'b1, state + 8'b1};
+                136: {twi_sda, twi_scl, state} <= {rom_data[1], 1'b1, state + 8'b1};
                 // rom_data[0]
-                137: {twi_sda, twi_scl, state} <= {rom_data[9], 1'b0, state + 8'b1};
-                138: {twi_sda, twi_scl, state} <= {rom_data[8], 1'b0, state + 8'b1};
-                139: {twi_sda, twi_scl, state} <= {rom_data[8], 1'b1, state + 8'b1};
-                140: {twi_sda, twi_scl, state} <= {rom_data[8], 1'b1, state + 8'b1};
+                137: {twi_sda, twi_scl, state} <= {rom_data[1], 1'b0, state + 8'b1};
+                138: {twi_sda, twi_scl, state} <= {rom_data[0], 1'b0, state + 8'b1};
+                139: {twi_sda, twi_scl, state} <= {rom_data[0], 1'b1, state + 8'b1};
+                140: {twi_sda, twi_scl, state} <= {rom_data[0], 1'b1, state + 8'b1};
                 // Ack
                 141: {twi_sda, twi_scl, state} <= {1'b1, 1'b0, state + 8'b1};
                 142: {twi_sda, twi_scl, state} <= {1'b1, 1'b0, state + 8'b1};

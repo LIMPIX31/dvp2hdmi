@@ -26,17 +26,17 @@ module top (
 
     assign twi_mux = 3'b101;
     assign dvp_power_down = 1'b0;
-    assign dvp_rst_n = 1'b1;
+    assign dvp_rst_n = rst_n;
 //    assign dvp_ref_clk = ref_clk;
+ 
+    logic dvp_ready;
 
     sys_pll u_sys_pll (
         .ref_clk(ref_clk),
         .rst_n(rst_n),
-        .dvp_clk(dvp_ref_clk),
-        .dvp_clk_en(1'b1)
-    );
 
-    logic dvp_ready;
+        .dvp_clk(dvp_ref_clk)
+    );
 
     assign led_dvp_ready = dvp_ready;
 
@@ -49,4 +49,3 @@ module top (
     );
 
 endmodule : top
-
