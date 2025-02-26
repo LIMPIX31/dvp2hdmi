@@ -6,12 +6,13 @@
     <Device name="GW5AST-138B" pn="GW5AST-LV138FPG676AC1/I0">gw5ast138b-007</Device>
     <FileList>
         <File path="src/dvp_init.sv" type="file.verilog" enable="1"/>
+        <File path="src/edge_detector.sv" type="file.verilog" enable="1"/>
         <File path="src/sys_pll.sv" type="file.verilog" enable="1"/>
         <File path="src/top.sv" type="file.verilog" enable="1"/>
         <File path="tmp/gowin_pll/gowin_pll.v" type="file.verilog" enable="1"/>
         <File path="phy.cst" type="file.cst" enable="1"/>
         <File path="timings.sdc" type="file.sdc" enable="1"/>
         <File path="src/dvp2hdmi.rao" type="file.gao" enable="1"/>
-        <File path="src/dvp_rom.txt" type="file.other" enable="1"/>
+        <File path="src/progmem.txt" type="file.other" enable="1"/>
     </FileList>
 </Project>
