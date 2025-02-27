@@ -2,4 +2,6 @@
 --lint-only
 -sv
 --timing
-src/i2c_master/i2c_pkg.sv
+prim_sim.sv
+src/lvds.core.sv
+src/h14tx.core.sv

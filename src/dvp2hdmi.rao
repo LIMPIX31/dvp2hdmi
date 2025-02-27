@@ -16,12 +16,66 @@
                 <Signal>dvp_data[1]</Signal>
                 <Signal>dvp_data[0]</Signal>
             </Bus>
-            <Signal capture_enable="true">dvp_pixel_clk</Signal>
+            <Signal capture_enable="true">tmds_clk</Signal>
+            <Bus capture_enable="true" name="tmds_pixel[23:0]">
+                <Signal>tmds_pixel[23]</Signal>
+                <Signal>tmds_pixel[22]</Signal>
+                <Signal>tmds_pixel[21]</Signal>
+                <Signal>tmds_pixel[20]</Signal>
+                <Signal>tmds_pixel[19]</Signal>
+                <Signal>tmds_pixel[18]</Signal>
+                <Signal>tmds_pixel[17]</Signal>
+                <Signal>tmds_pixel[16]</Signal>
+                <Signal>tmds_pixel[15]</Signal>
+                <Signal>tmds_pixel[14]</Signal>
+                <Signal>tmds_pixel[13]</Signal>
+                <Signal>tmds_pixel[12]</Signal>
+                <Signal>tmds_pixel[11]</Signal>
+                <Signal>tmds_pixel[10]</Signal>
+                <Signal>tmds_pixel[9]</Signal>
+                <Signal>tmds_pixel[8]</Signal>
+                <Signal>tmds_pixel[7]</Signal>
+                <Signal>tmds_pixel[6]</Signal>
+                <Signal>tmds_pixel[5]</Signal>
+                <Signal>tmds_pixel[4]</Signal>
+                <Signal>tmds_pixel[3]</Signal>
+                <Signal>tmds_pixel[2]</Signal>
+                <Signal>tmds_pixel[1]</Signal>
+                <Signal>tmds_pixel[0]</Signal>
+            </Bus>
+            <Signal capture_enable="true">de_lock</Signal>
+            <Bus capture_enable="true" name="x[11:0]">
+                <Signal>x[11]</Signal>
+                <Signal>x[10]</Signal>
+                <Signal>x[9]</Signal>
+                <Signal>x[8]</Signal>
+                <Signal>x[7]</Signal>
+                <Signal>x[6]</Signal>
+                <Signal>x[5]</Signal>
+                <Signal>x[4]</Signal>
+                <Signal>x[3]</Signal>
+                <Signal>x[2]</Signal>
+                <Signal>x[1]</Signal>
+                <Signal>x[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="y[10:0]">
+                <Signal>y[10]</Signal>
+                <Signal>y[9]</Signal>
+                <Signal>y[8]</Signal>
+                <Signal>y[7]</Signal>
+                <Signal>y[6]</Signal>
+                <Signal>y[5]</Signal>
+                <Signal>y[4]</Signal>
+                <Signal>y[3]</Signal>
+                <Signal>y[2]</Signal>
+                <Signal>y[1]</Signal>
+                <Signal>y[0]</Signal>
+            </Bus>
         </SignalList>
         <Triggers>
             <Trigger index="0">
                 <SignalList>
-                    <Signal>dvp_de</Signal>
+                    <Signal>led_delock</Signal>
                 </SignalList>
             </Trigger>
             <Trigger index="1"/>
@@ -62,5 +116,5 @@
             <Expression>M0</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>1111000001101100</GAO_ID>
+    <GAO_ID>0100001001101111</GAO_ID>
 </GAO_CONFIG>

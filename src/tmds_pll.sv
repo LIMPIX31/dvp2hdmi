@@ -1,22 +1,22 @@
-module sys_pll (
-    input logic ref_clk,
+module tmds_pll (
+    input logic tmds_clk,
     input logic rst_n,
 
-    output logic dvp_clk
+    output logic lock,
+    output logic serial_tmds_clk
 );
 
-    logic lock;
     logic [6:0] sink;
 
     PLL #(
-        .FCLKIN("50"),
+        .FCLKIN("150"),
         .IDIV_SEL(1),
-        .ODIV0_SEL(50),
-        .MDIV_SEL(24),
+        .ODIV0_SEL(4),
+        .MDIV_SEL(10),
         .CLKOUT0_EN("TRUE")
-    ) u_pll_0 (
+    ) u_pll_1 (
         .LOCK(lock),
-        .CLKOUT0(dvp_clk),
+        .CLKOUT0(serial_tmds_clk),
         .CLKOUT1(sink[0]),
         .CLKOUT2(sink[1]),
         .CLKOUT3(sink[2]),
@@ -24,7 +24,7 @@ module sys_pll (
         .CLKOUT5(sink[4]),
         .CLKOUT6(sink[5]),
         .CLKFBOUT(sink[6]),
-        .CLKIN(ref_clk),
+        .CLKIN(tmds_clk),
         .CLKFB(1'b0),
         .RESET(~rst_n),
         .PLLPWD(1'b0),
@@ -65,4 +65,4 @@ module sys_pll (
         .SSCMDSEL_FRAC({1'b0, 1'b0, 1'b0})
     );
 
-endmodule : sys_pll
+endmodule
